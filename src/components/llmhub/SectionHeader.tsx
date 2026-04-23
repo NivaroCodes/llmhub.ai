@@ -22,11 +22,11 @@ export const SectionHeader = ({
       <span aria-hidden className="inline-block h-px w-6 bg-foreground/40" />
       {eyebrow}
     </p>
-    <h2 className="mt-4 text-balance text-[34px] font-[650] leading-[1.05] tracking-[-0.025em] text-foreground sm:text-[46px]">
+    <h2 className="mt-5 text-balance text-[40px] font-[650] leading-[1.05] tracking-[-0.025em] text-foreground sm:text-[56px]">
       {title}
     </h2>
     {description && (
-      <p className="mt-5 text-[17px] leading-[1.6] text-foreground/70 sm:text-[18px]">
+      <p className="mt-6 text-[18px] leading-[1.6] text-foreground/70 sm:text-[20px]">
         {description}
       </p>
     )}
