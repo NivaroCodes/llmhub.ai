@@ -10,9 +10,13 @@ export const FinalCTA = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5 }}
-        className="rounded-lg border border-border bg-surface px-6 py-16 text-center sm:px-12 sm:py-20"
+        className="relative isolate overflow-hidden rounded-lg border border-border bg-surface px-6 py-16 text-center sm:px-12 sm:py-20"
       >
-        <p className="eyebrow">✦ Get started</p>
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-aurora opacity-70" />
+        <p className="eyebrow inline-flex items-center justify-center gap-2.5">
+          <span aria-hidden className="inline-block h-px w-6 bg-foreground/40" />
+          Get started
+        </p>
         <h2 className="mx-auto mt-5 max-w-[18ch] text-balance text-[36px] font-[650] leading-[1.1] tracking-[-0.02em] sm:text-[48px]">
           Stop rewriting integrations for every model
         </h2>
