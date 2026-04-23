@@ -3,6 +3,7 @@ import { Hero } from "@/components/llmhub/Hero";
 import { WhatItDoes } from "@/components/llmhub/WhatItDoes";
 import { HowItWorks } from "@/components/llmhub/HowItWorks";
 import { CodeBlock } from "@/components/llmhub/CodeBlock";
+import { LiveArchitecture } from "@/components/llmhub/LiveArchitecture";
 import { ForBusiness } from "@/components/llmhub/ForBusiness";
 import { Pricing } from "@/components/llmhub/Pricing";
 import { FinalCTA } from "@/components/llmhub/FinalCTA";
@@ -16,6 +17,7 @@ const Index = () => {
         <Hero />
         <WhatItDoes />
         <HowItWorks />
+        <LiveArchitecture />
         <CodeBlock />
         <ForBusiness />
         <Pricing />
