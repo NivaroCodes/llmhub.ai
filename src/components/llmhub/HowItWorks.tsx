@@ -39,8 +39,8 @@ export const HowItWorks = () => (
             <span className="font-mono text-[12px] tracking-widest text-muted-foreground">
               {s.n}
             </span>
-            <h3 className="mt-6 text-[20px] font-[600] tracking-tight">{s.h}</h3>
-            <p className="mt-2 text-[15px] leading-[1.55] text-muted-foreground">{s.p}</p>
+            <h3 className="mt-6 text-[24px] font-[600] tracking-tight sm:text-[26px]">{s.h}</h3>
+            <p className="mt-3 text-[16px] leading-[1.6] text-muted-foreground">{s.p}</p>
           </motion.li>
         ))}
       </ol>

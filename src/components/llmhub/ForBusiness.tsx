@@ -33,8 +33,8 @@ export const ForBusiness = () => (
                 <Icon className="h-4 w-4" />
               </span>
               <div className="min-w-0">
-                <h3 className="text-[16px] font-[600]">{it.h}</h3>
-                <p className="mt-1 text-[14px] leading-[1.55] text-muted-foreground">{it.p}</p>
+                <h3 className="text-[19px] font-[600] tracking-tight">{it.h}</h3>
+                <p className="mt-1.5 text-[15px] leading-[1.55] text-muted-foreground">{it.p}</p>
               </div>
             </motion.li>
           );

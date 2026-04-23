@@ -110,4 +110,16 @@
     50%     { transform: translateY(-8px); }
   }
   .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 38s linear infinite; }
+  .animate-marquee:hover { animation-play-state: paused; }
+
+  @keyframes blink {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
 }
