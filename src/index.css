@@ -4,47 +4,47 @@
 
 @layer base {
   :root {
-    /* LLMHub — Dark mode only. Brutalist + scientific. */
-    --background: 0 0% 4%;            /* #0A0A0A */
-    --foreground: 0 0% 96%;
+    /* LLMHub — Editorial light mode. */
+    --background: 0 0% 100%;          /* #FFFFFF */
+    --foreground: 0 0% 4%;            /* #0A0A0A */
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 96%;
+    --surface: 60 9% 97%;             /* #F7F7F5 off-white sections */
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
 
-    --primary: 74 100% 50%;           /* acid green #C6FF00 */
-    --primary-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 96%;
+    --primary: 0 0% 4%;               /* black */
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
+    --secondary: 60 9% 97%;
+    --secondary-foreground: 0 0% 4%;
 
-    --accent: 252 100% 69%;           /* glow #7B61FF */
-    --accent-foreground: 0 0% 96%;
+    --muted: 60 9% 97%;
+    --muted-foreground: 0 0% 45%;     /* #737373 */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 96%;
+    --accent: 60 9% 97%;
+    --accent-foreground: 0 0% 4%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 74 100% 50%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.25rem;
+    --border: 0 0% 90%;               /* #E5E5E5 */
+    --input: 0 0% 90%;
+    --ring: 0 0% 4%;
 
-    --grid-color: 0 0% 100%;
+    --radius: 0.5rem;                 /* 8px */
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 74 100% 50%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 14%;
-    --sidebar-ring: 74 100% 50%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 0 0% 4%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 60 9% 97%;
+    --sidebar-accent-foreground: 0 0% 4%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 4%;
   }
 }
 
@@ -53,12 +53,13 @@
     @apply border-border;
   }
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
   }
 }
 
@@ -69,22 +70,13 @@
   .font-sans {
     font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   }
-  .grid-bg {
-    background-image:
-      linear-gradient(to right, hsl(var(--grid-color) / 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--grid-color) / 0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
+  .bg-surface {
+    background-color: hsl(var(--surface));
   }
-  .grid-bg-fade {
-    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground;
   }
-  .text-glow-acid {
-    text-shadow: 0 0 24px hsl(var(--primary) / 0.35);
-  }
-  .border-hairline {
-    @apply border border-border;
-  }
-  .acid-divider {
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.5), transparent);
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1080px] px-6 sm:px-8;
   }
 }

@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 const links = [
   { href: "#docs", label: "Docs" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#blog", label: "Blog" },
 ];
 
 export const Navbar = () => {
@@ -14,7 +13,7 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 4);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -23,33 +22,30 @@ export const Navbar = () => {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled ? "border-b border-border bg-background/85 backdrop-blur" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <nav className="container-editorial flex h-16 items-center justify-between">
         <Logo />
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-[14px] text-muted-foreground transition-colors hover:text-foreground"
               >
                 {l.label}
               </a>
             </li>
           ))}
         </ul>
-        <div className="hidden items-center gap-3 md:flex">
-          <a href="#login" className="text-sm text-muted-foreground hover:text-foreground">
-            Sign in
-          </a>
+        <div className="hidden md:block">
           <Button variant="acid" size="sm" asChild>
-            <a href="#start">Start Free</a>
+            <a href="#start">Start free</a>
           </Button>
         </div>
         <button
-          className="grid h-9 w-9 place-items-center border border-border md:hidden"
+          className="grid h-9 w-9 place-items-center rounded-md border border-border md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -57,14 +53,14 @@ export const Navbar = () => {
         </button>
       </nav>
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur md:hidden">
-          <ul className="flex flex-col gap-1 px-4 py-3">
+        <div className="border-t border-border bg-background md:hidden">
+          <ul className="container-editorial flex flex-col gap-1 py-3">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-sm text-muted-foreground hover:text-foreground"
+                  className="block py-2 text-[15px] text-muted-foreground hover:text-foreground"
                 >
                   {l.label}
                 </a>
@@ -72,7 +68,7 @@ export const Navbar = () => {
             ))}
             <li className="pt-2">
               <Button variant="acid" size="sm" className="w-full" asChild>
-                <a href="#start">Start Free</a>
+                <a href="#start">Start free</a>
               </Button>
             </li>
           </ul>
