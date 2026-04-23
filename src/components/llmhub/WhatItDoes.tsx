@@ -32,9 +32,9 @@ export const WhatItDoes = () => (
                 </span>
               </div>
             </div>
-            <figcaption className="mt-4">
-              <p className="text-[15px] font-medium text-foreground">{it.label}</p>
-              <p className="mt-1 text-[14px] text-muted-foreground">{it.desc}</p>
+            <figcaption className="mt-5">
+              <p className="text-[18px] font-[600] tracking-tight text-foreground">{it.label}</p>
+              <p className="mt-1.5 text-[15px] leading-[1.55] text-muted-foreground">{it.desc}</p>
             </figcaption>
           </motion.figure>
         ))}
