@@ -1,10 +1,9 @@
 import { Navbar } from "@/components/llmhub/Navbar";
 import { Hero } from "@/components/llmhub/Hero";
 import { WhatItDoes } from "@/components/llmhub/WhatItDoes";
-import { ProblemSolution } from "@/components/llmhub/ProblemSolution";
-import { Architecture } from "@/components/llmhub/Architecture";
-import { Features } from "@/components/llmhub/Features";
-import { SocialProof } from "@/components/llmhub/SocialProof";
+import { HowItWorks } from "@/components/llmhub/HowItWorks";
+import { CodeBlock } from "@/components/llmhub/CodeBlock";
+import { ForBusiness } from "@/components/llmhub/ForBusiness";
 import { Pricing } from "@/components/llmhub/Pricing";
 import { FinalCTA } from "@/components/llmhub/FinalCTA";
 import { Footer } from "@/components/llmhub/Footer";
@@ -16,10 +15,9 @@ const Index = () => {
       <main>
         <Hero />
         <WhatItDoes />
-        <ProblemSolution />
-        <Architecture />
-        <Features />
-        <SocialProof />
+        <HowItWorks />
+        <CodeBlock />
+        <ForBusiness />
         <Pricing />
         <FinalCTA />
       </main>
