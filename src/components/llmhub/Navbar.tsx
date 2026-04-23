@@ -4,7 +4,7 @@ const links = [
   { href: "#what", label: "Product" },
   { href: "#how", label: "How it works" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#docs", label: "Docs" },
+  { href: "/docs", label: "Docs" },
 ];
 
 export const Navbar = () => {
@@ -68,7 +68,7 @@ export const Navbar = () => {
 
         {/* CTAs inside the island */}
         <a
-          href="#login"
+          href="/login"
           className="hidden rounded-full px-3 py-1.5 text-[13px] font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white sm:inline-block sm:text-[14px]"
         >
           Log in
