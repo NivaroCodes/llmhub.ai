@@ -18,12 +18,15 @@ export const SectionHeader = ({
     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     className={`mb-14 max-w-2xl ${align === "center" ? "mx-auto text-center" : ""}`}
   >
-    <p className="eyebrow">✦ {eyebrow}</p>
-    <h2 className="mt-4 text-balance text-[34px] font-[650] leading-[1.1] tracking-[-0.02em] sm:text-[44px]">
+    <p className={`eyebrow flex items-center gap-2.5 ${align === "center" ? "justify-center" : ""}`}>
+      <span aria-hidden className="inline-block h-px w-6 bg-foreground/40" />
+      {eyebrow}
+    </p>
+    <h2 className="mt-4 text-balance text-[34px] font-[650] leading-[1.05] tracking-[-0.025em] text-foreground sm:text-[46px]">
       {title}
     </h2>
     {description && (
-      <p className="mt-5 text-[17px] leading-[1.55] text-muted-foreground sm:text-[18px]">
+      <p className="mt-5 text-[17px] leading-[1.6] text-foreground/70 sm:text-[18px]">
         {description}
       </p>
     )}
