@@ -9,7 +9,7 @@ const items = [
 ];
 
 export const WhatItDoes = () => (
-  <section className="py-[120px]">
+  <section id="what" className="py-[120px]">
     <div className="container-editorial">
       <SectionHeader
         eyebrow="What LLMHub does"

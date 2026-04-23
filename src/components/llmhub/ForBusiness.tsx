@@ -10,7 +10,7 @@ const items = [
 ];
 
 export const ForBusiness = () => (
-  <section className="bg-surface py-[120px]">
+  <section id="business" className="bg-surface py-[120px]">
     <div className="container-editorial">
       <SectionHeader
         eyebrow="For business"
