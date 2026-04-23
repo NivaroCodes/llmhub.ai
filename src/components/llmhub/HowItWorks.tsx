@@ -20,7 +20,7 @@ const steps = [
 ];
 
 export const HowItWorks = () => (
-  <section className="bg-surface py-[120px]">
+  <section id="how" className="bg-surface py-[120px]">
     <div className="container-editorial">
       <SectionHeader
         eyebrow="How it works"

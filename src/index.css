@@ -23,7 +23,7 @@
     --secondary-foreground: 0 0% 4%;
 
     --muted: 60 9% 97%;
-    --muted-foreground: 0 0% 45%;     /* #737373 */
+    --muted-foreground: 0 0% 32%;     /* darker for stronger readability on white */
 
     --accent: 60 9% 97%;
     --accent-foreground: 0 0% 4%;
@@ -74,9 +74,40 @@
     background-color: hsl(var(--surface));
   }
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground;
+    @apply font-mono text-[11px] uppercase tracking-[0.22em] font-medium text-foreground/70;
   }
   .container-editorial {
     @apply mx-auto w-full max-w-[1080px] px-6 sm:px-8;
   }
+  /* Animated background — soft drifting blobs + grid */
+  .bg-aurora::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(40% 35% at 20% 30%, hsl(45 90% 70% / 0.18), transparent 60%),
+      radial-gradient(35% 30% at 80% 20%, hsl(190 80% 70% / 0.18), transparent 60%),
+      radial-gradient(45% 40% at 60% 80%, hsl(280 70% 75% / 0.16), transparent 60%);
+    filter: blur(40px);
+    animation: aurora-drift 22s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(0 0% 0% / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 0% / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 80%);
+  }
+  @keyframes aurora-drift {
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    50%  { transform: translate3d(2%, -1%, 0) scale(1.05); }
+    100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
+  }
+  @keyframes float-slow {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-8px); }
+  }
+  .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
 }
